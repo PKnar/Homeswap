@@ -1,0 +1,41 @@
+#homepage {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-hero {
+  width: 50%;
+}
+
+.homepage-hero h1 {
+  font-size: 5vw;
+  color: var(--black);
+}
+
+.svg {
+  width: 40%;
+}
+
+.homepage-hero .primary-button {
+  padding: 1rem;
+  background-color: var(--primaryColor);
+  border: none;
+  margin-top: 1rem;
+  color: white;
+  text-transform: uppercase;
+}
+
+.transparent-button {
+  border: 1.5px solid var(--primaryColor);
+  padding: 1rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
+button {
+  border-radius: 5px;
+  cursor: pointer;
+}
