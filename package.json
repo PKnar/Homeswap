@@ -2,10 +2,10 @@
   "name": "hs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/homeswap-backend/server.js",
   "scripts": {
     "start": "node homeswap-backend/server.js",
-    "server": "node homeswap-backend/server.js",
+    "server": "nodemon homeswap-backend/server.js",
     "client": "npm start --prefix homeswap",
     "dev": "concurrently   \"npm run server \"   \"npm run client\" "
   },

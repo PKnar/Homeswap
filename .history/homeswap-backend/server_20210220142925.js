@@ -3,18 +3,19 @@ const app = express();
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 const path = require("path");
-let parentDir = path.resolve(__dirname, "..");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
 app.use(cors());
 
+let parentDir = require("path").resolve(__dirname, "..");
+console.log("path", parent);
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(parentDir, "homeswap/build")));
+  app.use(express.static(path.join(__dirname, "homeswap/build")));
 
   app.get("*", function (req, res) {
-    res.sendFile(path.join(parentDir, "homeswap/build", "index.html"));
+    res.sendFile(path.join(__dirname, "homeswap/build", "index.html"));
   });
 }
 
