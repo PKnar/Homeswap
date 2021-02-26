@@ -30,7 +30,6 @@ const authUser = async (req, res) => {
       res.status(401).json({ error: "Invalid email or password" });
     }
   } catch (error) {
-    console.log(error);
     res.json({ error });
   }
 };
@@ -45,7 +44,7 @@ const registerUser = async (req, res) => {
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(400).json({ message: "User already exists" });
+    res.status(400).json({ error: "User already exists" });
   }
 
   const user = await User.create({ name, email, password });
@@ -57,7 +56,7 @@ const registerUser = async (req, res) => {
       isAdmin: user.isAdmin,
     });
   } else {
-    res.status(400).json({ message: "Invalid user data" });
+    res.status(400).json({ error: "Invalid user data" });
   }
 };
 
