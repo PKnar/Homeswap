@@ -6,6 +6,7 @@ const path = require("path");
 let parentDir = path.resolve(__dirname, "..");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
+const homeRoutes = require("./routes/homeRoutes");
 const connectDB = require("./dbConfig/db");
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use(express.json());
 app.use("/api/users", userRoutes);
+app.use("/api/homes", homeRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(parentDir, "homeswap/build")));

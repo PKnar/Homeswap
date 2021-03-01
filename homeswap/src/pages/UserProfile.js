@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import SwapForm from "../components/SwapForm";
 
-function UserProfile({ match }) {
-  console.log("match", match);
-  return <div>User profile</div>;
+function UserProfile({ user }) {
+  return (
+    <div>
+      <SwapForm user={user} />
+    </div>
+  );
 }
 
 export default UserProfile;

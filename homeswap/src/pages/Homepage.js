@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import HomeSVG from "../components/HomeSVG";
 import HowSection from "../components/HowSection";
 import "../css/Homepage.css";
-import axios from "axios";
-import { english, dutch } from "../content.js";
-//import house from "../assests/svg/home2.svg";
 
 function Homepage({ lang }) {
   return (
@@ -16,9 +14,14 @@ function Homepage({ lang }) {
           <button className="primary-button">
             <a href="#how-does-it-work">{lang.homepage.buttons[0]}</a>
           </button>
-          <button className="transparent-button">
-            <a href="#">{lang.homepage.buttons[1]}</a>
-          </button>
+
+          <Link
+            style={{ borderRadius: "5px" }}
+            className="transparent-button"
+            to="/homes"
+          >
+            {lang.homepage.buttons[1]}
+          </Link>
         </div>
         <div className="svg">
           <HomeSVG />

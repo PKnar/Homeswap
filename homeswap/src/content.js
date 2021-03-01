@@ -31,3 +31,18 @@ export const dutch = {
     buttons: ["Hoe werkt het?", "Zoek een woning"],
   },
 };
+
+export const dutchProvinces = [
+  "Groningen",
+  "Friesland ",
+  "Drenthe",
+  "Overijssel",
+  "Flevoland 	",
+  "Gelderland",
+  "Utrecht",
+  "Noord-Holland",
+  "Zuid-Holland",
+  "Zeeland",
+  "Noord-Brabant",
+  "Limburg",
+];

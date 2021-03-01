@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ErrorMessage from "./ErrorMessage";
 
-function LoginForm({ submitHandler, error }) {
+function LoginForm({ handleLogin, error }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <form onSubmit={(e) => submitHandler(e, email, password)}>
+    <form>
       <h2>Login</h2>
       <p>Welcome back</p>
       {error && <ErrorMessage error={error} />}
@@ -15,7 +15,9 @@ function LoginForm({ submitHandler, error }) {
         type="email"
         required
         placeholder="Enter you email"
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
       />
       <input
         type="password"
@@ -24,8 +26,8 @@ function LoginForm({ submitHandler, error }) {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button
-        disabled={email && password ? false : true}
-        onClick={(e) => submitHandler(e, email, password)}
+        //disabled={email && password ? false : true}
+        onClick={(e) => handleLogin(e, email, password)}
       >
         Login
       </button>

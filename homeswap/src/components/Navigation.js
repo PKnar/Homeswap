@@ -1,23 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../css/Navigation.css";
 import { english, dutch } from "../content.js";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../actions/userAction";
-import { useHistory } from "react-router-dom";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import LanguageIcon from "@material-ui/icons/Language";
 
-function Navigation({ setLanguage }) {
+function Navigation({ setLanguage, user, logout }) {
   let [lang, setLang] = useState(english);
-  const history = useHistory();
-
-  let userLogin = useSelector((state) => state.userLogin);
-  let dispatch = useDispatch();
-  let { userInfo } = userLogin;
-
-  const handleLogout = () => {
-    dispatch(logout());
-    history.push("/");
-  };
 
   return (
     <nav>
@@ -25,48 +14,61 @@ function Navigation({ setLanguage }) {
         <Link to="/">HOMESWAP</Link>
       </h4>
       <div className="container">
-        <a
-          onClick={(e) => {
-            setLang(english);
-            setLanguage(english);
-          }}
-          href="#"
-        >
-          EN
-        </a>{" "}
-        |
-        <a
-          onClick={(e) => {
-            setLang(dutch);
-            setLanguage(dutch);
-          }}
-          href="#"
-        >
-          NL
-        </a>
-        <ul className="desktop-">
+        <div>
+          <a
+            onClick={(e) => {
+              setLang(english);
+              setLanguage(english);
+            }}
+            href="#"
+          >
+            EN
+          </a>{" "}
+          |
+          <a
+            onClick={(e) => {
+              setLang(dutch);
+              setLanguage(dutch);
+            }}
+            href="#"
+          >
+            NL
+          </a>
+        </div>
+        <ul className="desktop-nav">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/homes">Homes</Link>
           </li>
-          {userInfo ? (
+          <li className="auth-icon" style={{ cursor: "pointer" }}>
+            <PersonOutlineIcon />
+            <ul className="mini-menu">
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/signup">Register</Link>
+              </li>
+            </ul>
+          </li>
+          {/* {user ? (
             <>
               <li>
-                <Link to={`profile/${userInfo._id}`}>Profile</Link>
+                <Link to={`/profile/${user._id}`}>Profile</Link>
               </li>
               <li>
                 {" "}
-                <a onClick={handleLogout}>Logout</a>
+                <a onClick={logout}>Logout</a>
               </li>
             </>
           ) : (
             lang.authLinks.map((link) => {
               return (
-                <li>
+                <li key={link.path}>
                   <Link to={link.path}>{link.name}</Link>
                 </li>
               );
             })
-          )}
+          )} */}
         </ul>
       </div>
     </nav>
