@@ -26,9 +26,7 @@ function HomesPage({ houses }) {
 
               return (
                 <tr>
-                  <td>
-                    {/* <Link to="/details">{userHouse.municipality}</Link> */}
-                  </td>
+                  <td>{userHouse.municipality}</td>
                   <td>{userHouse.hometype}</td>
                   <td>{userHouse.rent}</td>
                   <td>{userHouse.rooms}</td>
