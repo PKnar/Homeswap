@@ -10,6 +10,7 @@ function ErrorMessage({ error }) {
         border: "1px solid red",
         padding: "0.5rem",
         marginTop: "0.5rem",
+        textAlign: "center",
       }}
     >
       {error}

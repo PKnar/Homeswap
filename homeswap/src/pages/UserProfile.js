@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import SwapForm from "../components/SwapForm";
 
-function UserProfile({ user }) {
+function UserProfile({ user, getAllHomes }) {
   return (
     <div>
-      <SwapForm user={user} />
+      <h3>Hello {user.name}</h3>
+      <SwapForm user={user} getAllHomes={getAllHomes} />
     </div>
   );
 }

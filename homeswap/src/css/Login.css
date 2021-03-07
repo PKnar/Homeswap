@@ -50,6 +50,6 @@ form button {
   border: 1px solid transparent;
   margin: 1rem;
   padding: 0.5rem 3rem;
-  background-color: var(--primaryColor);
+  background-color: var(--buttonColor);
   color: aliceblue;
 }

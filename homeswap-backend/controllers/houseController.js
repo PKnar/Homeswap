@@ -6,14 +6,15 @@ const getAll = async (req, res) => {
 
     if (houses) {
       res.json({ houses });
+    } else {
+      res.json({ error: "something went wrong" });
     }
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    console.error(`Error received from axios.post: ${JSON.stringify(err)}`);
   }
 };
 
 const createAdvertisement = async (req, res) => {
-  console.log(req.body.userHouse);
   let data = {
     user: req.body._id,
 

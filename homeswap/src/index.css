@@ -1,8 +1,10 @@
 :root {
-  --primaryColor: rgb(182, 99, 4);
+  --primaryColor: aquamarine;
   --baseColor: rgb(243, 243, 243);
   --black: rgb(41, 41, 41);
-  --formColor: rgb(248, 232, 201);
+  --formColor: #fdefcf;
+  /* --formColor:               rgb(248, 232, 201); */
+  --buttonColor: #000000;
 }
 
 * {
@@ -13,7 +15,7 @@
 }
 
 body {
-  background-color: var(--baseColor);
+  background-color: aquamarine;
   width: 100%;
   overflow-x: hidden;
 }

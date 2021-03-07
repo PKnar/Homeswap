@@ -5,23 +5,45 @@ import HowSection from "../components/HowSection";
 import "../css/Homepage.css";
 
 function Homepage({ lang }) {
+  window.addEventListener("scroll", (event) => {
+    let scrollTop = document.documentElement.scrollTop;
+    let header = document.querySelector("#homepage");
+
+    if (scrollTop > 100) {
+      header.style.animation = "border 0.5s forwards  ease-in-out";
+    } else {
+      header.style.animation = "removeborder 0.5s forwards ease-in-out";
+    }
+  });
+
   return (
     <div>
       <div id="homepage">
         <div className="homepage-hero">
           <h1>{lang.homepage.hero}</h1>
+          <p>
+            Here you will find advertisements from people who offer their rental
+            property for exchange. For example because of work, family expansion
+            or for other reasons.
+          </p>
 
-          <button className="primary-button">
-            <a href="#how-does-it-work">{lang.homepage.buttons[0]}</a>
-          </button>
+          <div className="buttons">
+            <button className="primary-button">
+              <a style={{ color: "white" }} href="#how-does-it-work">
+                {lang.homepage.buttons[0]}
+              </a>
+            </button>
 
-          <Link
-            style={{ borderRadius: "5px" }}
-            className="transparent-button"
-            to="/homes"
-          >
-            {lang.homepage.buttons[1]}
-          </Link>
+            <button className="secondary-button">
+              <Link
+                style={{ borderRadius: "5px", color: "black" }}
+                className="transparent-button"
+                to="/homes"
+              >
+                {lang.homepage.buttons[1]}
+              </Link>
+            </button>
+          </div>
         </div>
         <div className="svg">
           <HomeSVG />

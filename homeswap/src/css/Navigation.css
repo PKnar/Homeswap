@@ -4,15 +4,17 @@ nav {
   width: 100%;
   height: 70px;
   justify-content: space-around;
+  background-color: var(--baseColor);
 }
 
-nav h4 {
-  color: var(--primaryColor);
+nav h4 a {
+  background-color: var(--primaryColor);
+  padding: 2rem;
 }
 
 nav .container {
   display: flex;
-  width: 60%;
+  width: 70%;
   justify-content: flex-end;
 }
 
@@ -75,6 +77,6 @@ ul {
 .mini-menu li:hover,
 .mini-menu li:active,
 .mini-menu li:focus {
-  background-color: rgb(236, 189, 128);
+  background-color: var(--formColor);
   transition: 0.3s;
 }

@@ -1,3 +1,4 @@
+const House = require("../models/houseModel.js");
 const User = require("../models/userModel.js");
 
 //@descrption Auth user
@@ -24,6 +25,7 @@ const authUser = async (req, res) => {
         _id: user.id,
         name: user.name,
         email: user.email,
+        notifications: user.notifications,
         isAdmin: user.isAdmin,
       });
     } else {
@@ -53,6 +55,7 @@ const registerUser = async (req, res) => {
       _id: user.id,
       name: user.name,
       email: user.email,
+      notifications: user.notifications,
       isAdmin: user.isAdmin,
     });
   } else {
@@ -60,8 +63,22 @@ const registerUser = async (req, res) => {
   }
 };
 
+const updateNotification = async (req, res) => {
+  let _id = req.body.user;
+  let { loggedUser } = req.body;
+
+  const foundUser = await User.findOne({ _id });
+  const offeredHouse = await House.findOne({ user: loggedUser });
+
+  foundUser.notifications.push(offeredHouse);
+  foundUser.save();
+
+  res.json({ foundUser });
+};
+
 module.exports = {
   getUsers,
   authUser,
   registerUser,
+  updateNotification,
 };

@@ -4,9 +4,11 @@ import "../css/Navigation.css";
 import { english, dutch } from "../content.js";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import LanguageIcon from "@material-ui/icons/Language";
+import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 
 function Navigation({ setLanguage, user, logout }) {
   let [lang, setLang] = useState(english);
+  console.log(user);
 
   return (
     <nav>
@@ -39,14 +41,43 @@ function Navigation({ setLanguage, user, logout }) {
           <li>
             <Link to="/homes">Homes</Link>
           </li>
+          {user && (
+            <li
+              style={{
+                position: "relative",
+              }}
+            >
+              <NotificationsNoneIcon />
+              {user.notifications.length > 0 && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    border: "2px solid transparent",
+                    borderRadius: "100%",
+                    backgroundColor: "red",
+                    width: "10px",
+                    height: "10px",
+                  }}
+                ></div>
+              )}
+            </li>
+          )}
           <li className="auth-icon" style={{ cursor: "pointer" }}>
             <PersonOutlineIcon />
             <ul className="mini-menu">
               <li>
-                <Link to="/login">Login</Link>
+                <Link to={user ? `/profile/${user._id}` : "/login"}>
+                  {user ? "Profile" : "Login"}
+                </Link>
               </li>
               <li>
-                <Link to="/signup">Register</Link>
+                {user ? (
+                  <a onClick={logout}>Logout</a>
+                ) : (
+                  <Link to="/signup">Register</Link>
+                )}
               </li>
             </ul>
           </li>

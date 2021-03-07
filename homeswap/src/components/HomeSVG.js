@@ -3,7 +3,7 @@ import "../css/svg.css";
 
 function HomeSVG() {
   return (
-    <div>
+    <div id="homepage-svg">
       <svg
         version="1.1"
         id="efec5e00-3a03-4cc7-a116-3276bdc4c472"

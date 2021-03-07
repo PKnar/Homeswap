@@ -13,17 +13,29 @@ function App() {
   let loggedUser = JSON.parse(localStorage.getItem("user"));
   let [lang, setLang] = useState(english);
   let [user, setUser] = useState(loggedUser);
+  let [selectedHouse, setSelectedHouse] = useState(null);
+
+  let updateSelectedHouse = (house) => {
+    setSelectedHouse(house);
+  };
 
   let history = useHistory();
   let [houses, setHouses] = useState([]);
 
-  useEffect(() => {
-    const getAllHomes = async () => {
+  const getAllHomes = async () => {
+    try {
       let res = await axios.get("/api/homes/");
-      console.log(res);
-      setHouses(res.data.houses);
-    };
+      if (res) {
+        setHouses(res.data.houses);
+      } else {
+        setHouses([]);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
+  useEffect(() => {
     getAllHomes();
   }, []);
 
@@ -63,7 +75,12 @@ function App() {
           exact
           path="/homes"
           component={(props) => (
-            <HomesPage {...props} lang={lang} houses={houses} />
+            <HomesPage
+              {...props}
+              lang={lang}
+              houses={houses}
+              updateSelectedHouse={updateSelectedHouse}
+            />
           )}
         />
         <Route
@@ -83,7 +100,16 @@ function App() {
         <Route
           exact
           path="/profile/:id"
-          component={(props) => <UserProfile {...props} user={user} />}
+          component={(props) => (
+            <UserProfile getAllHomes={getAllHomes} {...props} user={user} />
+          )}
+        />
+        <Route
+          exact
+          path="/details"
+          component={(props) => (
+            <DetailsPage {...props} user={user} selectedHouse={selectedHouse} />
+          )}
         />
       </Switch>
     </div>

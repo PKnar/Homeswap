@@ -2,6 +2,7 @@ import React from "react";
 import { dutchProvinces } from "../content.js";
 import { dutchCities } from "../cities.js";
 import "../css/profile.css";
+import ErrorMessage from "../components/ErrorMessage.js";
 
 import axios from "axios";
 
@@ -36,12 +37,13 @@ class SwapForm extends React.Component {
       facilities: "",
       description: "",
     },
+    success: false,
+    error: null,
   };
 
   sendAdRequest = async (e) => {
     e.preventDefault();
-    console.log("sending");
-    console.log(this.props);
+
     let { userHouse, requestedHouse } = this.state;
     let { _id } = this.props.user;
 
@@ -50,7 +52,12 @@ class SwapForm extends React.Component {
       userHouse,
       requestedHouse,
     });
-    console.log(response);
+    if (!response.data.error) {
+      this.setState({ success: true });
+      this.props.getAllHomes();
+    } else {
+      this.setState({ error: "Something went wrong" });
+    }
   };
 
   render() {
@@ -58,6 +65,7 @@ class SwapForm extends React.Component {
       <div className="homeswap-form">
         <form>
           <h3>Your rental house and requested house information </h3>
+          {this.state.error && <ErrorMessage error={this.state.error} />}
           <div className="container-column">
             {" "}
             <label for="province">Province:*</label>
@@ -307,7 +315,7 @@ class SwapForm extends React.Component {
                   this.setState((prevState) => ({
                     requestedHouse: {
                       ...prevState.requestedHouse,
-                      request: e.target.value,
+                      rooms: e.target.value,
                     },
                   }))
                 }
@@ -440,9 +448,10 @@ class SwapForm extends React.Component {
           </div>
           <hr />
           <div className="container-column">
-            <label>Description: </label>
+            <label>Description:* </label>
             <div className="container-row">
               <textarea
+                required
                 onChange={(e) =>
                   this.setState((prevState) => ({
                     userHouse: {
@@ -453,6 +462,7 @@ class SwapForm extends React.Component {
                 }
               ></textarea>{" "}
               <textarea
+                required
                 onChange={(e) =>
                   this.setState((prevState) => ({
                     requestedHouse: {
@@ -464,7 +474,9 @@ class SwapForm extends React.Component {
               ></textarea>
             </div>
           </div>
-          <button onClick={(e) => this.sendAdRequest(e)}>Submit</button>
+          <button onClick={(e) => this.sendAdRequest(e)}>
+            {this.state.success ? "Complete" : "Submit"}
+          </button>
         </form>
         {/* <form>
           <p>Requested property Details</p>

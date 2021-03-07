@@ -24,6 +24,7 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    notifications: [],
   },
   { timestamps: true }
 );
