@@ -1,0 +1,41 @@
+.st0 {
+  fill: #e6e6e6;
+}
+.st1 {
+  fill: var(--primaryColor);
+}
+.st2 {
+  fill: #272727;
+}
+.st3 {
+  fill: var(--primaryColor);
+}
+.st4 {
+  fill: #ffffff;
+}
+.st5 {
+  fill: var(--primaryColor);
+}
+.st6 {
+  fill: #bd828b;
+}
+.st7 {
+  fill: #2f2e41;
+}
+
+
+/* homes */
+<style type="text/css">
+	.st0{fill:#3F3D56;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:#FFE84A;}
+	.st2{fill:#3F3D56;}
+	.st3{fill:#87F3DA;}
+	.st4{opacity:0.1;enable-background:new    ;}
+	.st5{opacity:0.4;fill:#87F3DA;enable-background:new    ;}
+	.st6{fill:#CCCCCC;}
+	.st7{fill:#F2F2F2;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st9{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st10{fill:#FFE84A;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+	.st11{fill:#231F20;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+</style>

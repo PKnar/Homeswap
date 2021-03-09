@@ -1,0 +1,79 @@
+.st0 {
+  fill: #e6e6e6;
+}
+.st1 {
+  fill: var(--primaryColor);
+}
+.st2 {
+  fill: #272727;
+}
+.st3 {
+  fill: var(--primaryColor);
+}
+.st4 {
+  fill: #ffffff;
+}
+.st5 {
+  fill: var(--primaryColor);
+}
+.st6 {
+  fill: #bd828b;
+}
+.st7 {
+  fill: #2f2e41;
+}
+
+/* homes */
+<style type="text/css" > .st0 {
+  fill: #3f3d56;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+.st1 {
+  fill: #ffe84a;
+}
+.st2 {
+  fill: #3f3d56;
+}
+.st3 {
+  fill: #87f3da;
+}
+.st4 {
+  opacity: 0.1;
+  enable-background: new;
+}
+.st5 {
+  opacity: 0.4;
+  fill: #87f3da;
+  enable-background: new;
+}
+.st6 {
+  fill: #cccccc;
+}
+.st7 {
+  fill: #f2f2f2;
+}
+.st8 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+.st9 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.st10 {
+  fill: #ffe84a;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.st11 {
+  fill: #231f20;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
