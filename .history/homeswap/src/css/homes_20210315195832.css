@@ -1,0 +1,15 @@
+#homes{
+ 
+    height: 100vh;
+}
+
+#homes table{
+
+    width: 100%;
+    height: auto;
+}
+
+#homes tbody tr{
+    margin:2rem;
+    background-color: blue;
+}

@@ -1,0 +1,13 @@
+#homes{
+ 
+    height: 100vh;
+}
+
+#homes table{
+    background-color: aquamarine;
+    width: 100%;
+}
+
+#homes tbody tr{
+    margin:1rem
+}

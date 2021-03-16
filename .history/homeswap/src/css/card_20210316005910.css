@@ -1,0 +1,19 @@
+.card-container {
+  display: flex;
+  margin: 1px;
+  width: 50%;
+
+  align-items: center;
+}
+
+.card-container ul {
+  margin: 1rem;
+  min-width: 250px;
+  box-shadow: -4px 1px 31px -8px rgba(189, 189, 189, 0.71);
+  padding: 2rem;
+  width: 350px;
+}
+
+.card-container li {
+  margin: 0.5rem 0rem;
+}

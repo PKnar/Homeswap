@@ -1,0 +1,14 @@
+.card-container {
+  display: flex;
+
+  margin: 1px;
+  width: 50%;
+}
+
+.card-container ul {
+  margin: 1rem;
+}
+
+.card-container li {
+  margin: 0.5rem 0rem;
+}

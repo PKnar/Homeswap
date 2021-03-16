@@ -1,0 +1,20 @@
+/* SVG */
+
+form {
+  background-color: aqua;
+}
+
+#homepage-svg {
+  width: 200px;
+  animation: scale 1.5s forwards;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}

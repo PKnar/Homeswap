@@ -1,0 +1,65 @@
+/* SVG */
+
+.homepage-form {
+  width: 80%;
+  box-shadow: -4px 1px 31px -8px rgba(189, 189, 189, 0.71);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 400px;
+  padding: 2rem;
+ 
+
+
+}
+
+.selection label {
+  margin-left: 20px;
+  margin-bottom: -10px;
+  font-weight:bold;
+  font-size: 13px; 
+}
+
+.selection  select {
+  margin: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.selection {
+  width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.selection a{
+  margin: 1rem;
+  border: 1.5px solid rgb(0, 0, 0);
+  background-color:rgb(0, 0, 0) ;
+  padding: 0.5rem;
+  color:white;
+  font-size: 16px;
+text-align: center;
+}
+
+#homepage-svg {
+  width: 100px;
+  animation: scale 1.5s forwards;
+  align-self: center;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(0.9);
+  }
+}
