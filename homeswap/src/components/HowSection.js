@@ -17,7 +17,7 @@ function HowSection() {
           cardOne.style.animation = "slideRight 2s forwards";
           cardTwo.style.animation = "slideUp 2s forwards";
           cardThree.style.animation = "slideLeft 2s forwards";
-        } else if (scrollTop < 250) {
+        } else if (scrollTop < 200) {
           cardOne.style.animation = "";
           cardTwo.style.animation = "";
           cardThree.style.animation = "";
@@ -28,31 +28,10 @@ function HowSection() {
   );
 
   return (
-    <section
-      id="how-does-it-work"
-      style={{
-        height: "auto",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          width: "150px",
-          backgroundColor: "rgb(228, 105, 23)",
-          height: "3px",
-          margin: "10px auto",
-        }}
-      ></div>
+    <section id="how-does-it-work">
+      <div className="divider"></div>
       <h2>How does it work?</h2>
-      <p
-        style={{
-          width: "50%",
-          display: "block",
-          margin: "0 auto",
-          textAlign: "center",
-          marginBottom: "2rem",
-        }}
-      >
+      <p className="additional-info">
         This site is intended for tenants who offer their rental property for
         exchange. <br /> You can use it for free. For example because of work,
         family expansion or for other reasons.

@@ -15,17 +15,31 @@ function DetailsPage({ selectedHouse }) {
     console.log(res);
   };
   return (
-    <div style={{ display: "flex", height: "100vh", justifyContent: "center" }}>
-      {selectedHouse && (
-        <Card
-          userHouse={selectedHouse.userHouse}
-          requestedHouse={selectedHouse.requestedHouse}
-        />
-      )}
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {selectedHouse && (
+          <Card
+            userHouse={selectedHouse.userHouse}
+            requestedHouse={selectedHouse.requestedHouse}
+          />
+        )}
+      </div>
       {loggedUser && (
         <button
           onClick={(e) => handleRequest(e)}
-          style={{ backgroundColor: "green", padding: "3rem" }}
+          style={{
+            backgroundColor: "rgb(228, 105, 23)",
+            padding: "1rem 2rem",
+            border: "none",
+            color: "white",
+          }}
         >
           Send swap request
         </button>
