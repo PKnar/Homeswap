@@ -4,6 +4,8 @@ import home2 from "../assests/svg/home2.svg";
 import home3 from "../assests/svg/home3.svg";
 import "../css/Homepage.css";
 
+import bg_image from "../assests/images/image.jpg";
+
 function HowSection() {
   window.addEventListener(
     "scroll",
@@ -30,21 +32,36 @@ function HowSection() {
   return (
     <section id="how-does-it-work">
       <div className="divider"></div>
-      <h2>How does it work?</h2>
-      <p className="additional-info">
-        This site is intended for tenants who offer their rental property for
-        exchange. <br /> You can use it for free. For example because of work,
-        family expansion or for other reasons.
-      </p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h2>How does it work?</h2>
+        <p className="additional-info">
+          This site is intended for tenants who offer their rental property for
+          exchange. You can use it for free. For example because of work, family
+          expansion or for other reasons.
+        </p>
+      </div>
 
-      <div className="container">
+      <div
+        className="container"
+        style={{ backgroundImage: `url(${bg_image})` }}
+      >
         <div className="card card-one">
-          <img src={home1} />
           <h3 style={{ margin: " 1rem  0" }}>Sign up & Fill in the form</h3>
-          <p> Fill in the required fields and upload pictures.</p>
+          <p>
+            The system guarantees your privacy. By completing and submitting the
+            registration form, your rental property will be included in the
+            database free of charge and without obligations. After completing
+            your form, you will be given the option to add a photo to your
+            advertisement.
+          </p>
         </div>
         <div className="card card-two">
-          <img src={home2} />
           <h3 style={{ margin: " 1rem  0" }}>Share where you want to move</h3>
           <p>
             To prevent too many exchange request from the same user a maximum of
@@ -54,7 +71,6 @@ function HowSection() {
           </p>
         </div>
         <div className="card card card-three">
-          <img src={home3} />
           <h3 style={{ margin: " 1rem  0" }}>Exchange</h3>
           <p>
             Exchange candidates and home seekers from all over the country meet

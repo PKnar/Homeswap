@@ -1,22 +1,105 @@
-#homes{
-    height: 100vh;
-    overflow-x: auto;
-   
+#rentals-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width:80%
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-   
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+#rentals-section form {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-top: 2rem;
+  justify-content: space-between;
+  align-self: center;
+  width: auto;
+}
+
+#rentals-section form select {
+  border: none;
+  margin: 1rem;
+  width: 150px;
+  padding: 0.5rem;
+  border: 1px solid rgb(216, 216, 216);
+  font-size: 12px;
+}
+
+form button {
+  background-color: #171717;
+  color: white;
+  border: 1px solid transparent;
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  margin: 1rem;
+}
+
+.rental-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: calc(100% / 3);
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+  min-width: 400px;
+}
+
+.rental-image {
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  border-radius: 0;
+}
+
+.rental-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+  color: rgb(73, 73, 73);
+}
+
+.rental-detail p {
+  margin: 0.5rem 0;
+}
+
+.rental-detail h4 {
+  margin-bottom: 1rem;
+}
+
+.info {
+  margin: 1rem;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.view-button {
+  background-color: rgba(0, 0, 0, 0.637);
+  border: 1px solid var(--primaryColor);
+  padding: 0.5rem 2rem;
+  margin: 2rem;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--primaryColor);
+  font-weight: bold;
+}
+
+.rentals-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.offers {
+  border-right: 1px solid rgb(190, 190, 190);
+  padding-right: 2rem;
+  border-radius: 0;
+}

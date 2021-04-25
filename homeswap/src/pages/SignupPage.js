@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SignupForm from "../components/SignupForm";
 import axios from "axios";
+import login_bg from "../assests/images/3.jpg";
 
 function SignupPage({ history, logNewUser }) {
   let [error, setError] = useState(null);
@@ -45,10 +46,16 @@ function SignupPage({ history, logNewUser }) {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form">
+    <div className="auth-container">
+      <div className="auth-form">
         <SignupForm registerHandler={registerHandler} error={error} />
       </div>
+      <div
+        className="auth-bg"
+        style={{
+          backgroundImage: `url(${login_bg})`,
+        }}
+      ></div>
     </div>
   );
 }

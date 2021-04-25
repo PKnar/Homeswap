@@ -1,55 +1,89 @@
-.login-container {
-  width: 100%;
+.auth-container {
   display: flex;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
 }
 
-.login-form {
-  min-width: 350px;
+.auth-bg {
+  height: 100vh;
   width: 50%;
-  min-height: 400px;
-  background-color: var(--formColor);
+  background-size: cover;
+  background-position: center;
+}
+
+/* wraps the whole auth component */
+.auth-form {
+  width: 50%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  align-items: center;
 }
 
-.login-form form {
+#auth-form-wrapper {
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
+  align-items: center;
 }
 
-hr {
-  width: 250px;
-  margin: 10px;
-}
-.login-container form {
-  margin-bottom: 2rem;
-}
-
-.login-container form input {
-  padding: 1rem;
-  margin-top: 1rem;
-  border: none;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 350px;
-}
-
-form h2 {
+#auth-form-wrapper form {
+  height: 50vh;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
   margin: 1rem;
 }
 
-form button {
-  border: 1px solid transparent;
+#auth-form-wrapper form input {
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  border: 1px solid grey;
   margin: 1rem;
-  padding: 0.5rem 3rem;
-  background-color: var(--buttonColor);
-  color: aliceblue;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-left: 1.5rem;
+}
+
+.auth-form button {
+  border-radius: 3px;
+  border: 1px solid var(--primaryColor);
+  background-color: var(--primaryColor);
+  padding: 1rem 2rem;
+  margin: 2rem 1rem;
+  color: white;
+  font-size: 15px;
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .auth-form {
+    width: 60%;
+  }
+  #auth-form-wrapper form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-form {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.836);
+    width: 100%;
+  }
+
+  .auth-bg {
+    width: 100%;
+  }
+
+  #auth-form-wrapper form {
+    width: 80%;
+  }
 }

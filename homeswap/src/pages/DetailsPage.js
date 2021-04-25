@@ -21,6 +21,7 @@ function DetailsPage({ selectedHouse }) {
         height: "100vh",
         flexDirection: "column",
         alignItems: "center",
+        paddingTop: "6rem",
       }}
     >
       <div style={{ display: "flex", justifyContent: "center" }}>

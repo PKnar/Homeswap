@@ -7,6 +7,9 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import SearchIcon from "@material-ui/icons/Search";
 import HomepageForm from "../components/HomepageForm";
 import DotsSVG from "../components/DotsSVG";
+import { ArrowRight } from "@material-ui/icons";
+
+import home from "../assests/svg/bg.jpg";
 
 function Homepage({ lang }) {
   window.addEventListener("scroll", (event) => {
@@ -23,23 +26,64 @@ function Homepage({ lang }) {
   return (
     <main>
       <header id="homepage">
-        <DotsSVG />
-        <div id="homepage-hero">
-          <h1 className="hero-title">{lang.homepage.hero}</h1>
-          <p className="hero-message">
-            Here you will find advertisements from people who offer their rental
-            property for exchange.
-          </p>
-
-          <button className="primary-button">
+        {/* <DotsSVG /> */}
+        <div className="flex">
+          <div id="homepage-hero">
+            <h1 className="hero-title">
+              Exchange Your <br />
+              <span className="primary-color"> Rental</span> House
+            </h1>
+            <p className="hero-message">
+              Here you will find advertisements from people who offer their
+              rental property for exchange.
+            </p>
+            <form>
+              <select>
+                <option selected disabled>
+                  Select your current city
+                </option>
+              </select>
+              <select>
+                <option selected disabled>
+                  Select where you want to move
+                </option>
+              </select>
+              <button id="find">Find</button>
+            </form>
+            {/* <button className="primary-button">
             <a href="#how-does-it-work">{lang.homepage.buttons[0]}</a>
-          </button>
+          </button> */}
+            {/* <ArrowRight /> How does it work?{" "} */}
+          </div>
         </div>
-        <div id="homepage-form">
+        <div className="image-container">
+          <div
+            className="bg-image"
+            style={{
+              backgroundImage: `url(${home})`,
+            }}
+          ></div>
+        </div>
+        {/* <div id="homepage-form">
           <HomepageForm />
-        </div>
+        </div> */}{" "}
       </header>
       <HowSection />
+      <section id="statistics">
+        <h2>Statistics</h2>
+        <div className="wrapper">
+          <div className="transparent-card">
+            {" "}
+            <h3>20396</h3>
+            <p>Total number of ads</p>
+          </div>
+          <div className="transparent-card">
+            {" "}
+            <h3>21929</h3>
+            <p>Families have found their exchange partner through this site</p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

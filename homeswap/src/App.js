@@ -112,13 +112,6 @@ function App() {
           )}
         />
       </Switch>
-      <footer>
-        <ul>
-          <li className="footer-link">Terms of Use</li>
-          <li className="footer-link">Privacy Policy</li>
-        </ul>
-        <p>&copy; 2020 Homeswap</p>
-      </footer>
     </div>
   );
 }

@@ -14,6 +14,7 @@ function DotsSVG() {
       viewBox="0 0 50 50"
       style={{
         enableBackground: "new 0 0 50 50",
+        position: "absolute",
       }}
       space="preserve"
     >
