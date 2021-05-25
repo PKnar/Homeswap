@@ -29,19 +29,27 @@ function HomesPage({ houses, updateSelectedHouse }) {
     <section id="rentals-section">
       <form>
         <select>
-          <option selected disabled>
-            Move from
+          <option value="" disabled selected>
+            Select your city
           </option>
+          {dutchCities.map((city) => {
+            return <option value={city.city}>{city.city}</option>;
+          })}
         </select>
         <select>
-          <option selected disabled>
-            To
+          <option value="" disabled selected>
+            Move to
           </option>
+          {dutchCities.map((city) => {
+            return <option value={city.city}>{city.city}</option>;
+          })}
         </select>
         <select>
           <option selected disabled>
             Type of house
           </option>
+          <option>Apartament</option>
+          <option>Studio</option>
         </select>
         <select>
           <option selected disabled>

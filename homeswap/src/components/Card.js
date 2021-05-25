@@ -3,7 +3,7 @@ import "../css/card.css";
 import SyncAltIcon from "@material-ui/icons/SyncAlt";
 function Card({ userHouse, requestedHouse }) {
   return (
-    <div className="card-container" style={{ display: "flex", height: "80vh" }}>
+    <div className="card-container">
       <ul>
         <h4>Offers</h4>
         <li> Province: {userHouse.province} </li>
@@ -20,6 +20,7 @@ function Card({ userHouse, requestedHouse }) {
         <li> Description: {userHouse.description} </li>
       </ul>
       <SyncAltIcon
+        id="swap-icon"
         style={{
           alignSelf: "center",
           fontSize: "4rem",

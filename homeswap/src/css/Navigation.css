@@ -4,7 +4,6 @@ nav {
   height: 100px;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
   position: fixed;
   z-index: 9999;
 }
@@ -15,10 +14,6 @@ nav {
   align-items: center;
 }
 
-nav #logo {
-  margin-left: 5rem;
-}
-
 nav .desktop-nav li {
   margin-right: 2.5rem;
   font-size: 15px;
@@ -26,6 +21,10 @@ nav .desktop-nav li {
 
 nav li a {
   color: black;
+}
+
+#logo {
+  margin-left: 3rem;
 }
 
 /* .active {
@@ -129,7 +128,6 @@ nav li a {
   }
 
   nav #logo {
-    margin: -12px;
     font-size: 14px;
     font-weight: bold;
   }

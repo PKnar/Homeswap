@@ -8,7 +8,7 @@
 
 .card-container ul {
   margin: 1rem;
-  min-width: 250px;
+  min-width: 300px;
   box-shadow: -4px 1px 31px -8px rgba(189, 189, 189, 0.71);
   padding: 2rem;
   width: 30%;
@@ -16,4 +16,14 @@
 
 .card-container li {
   margin: 0.5rem 0rem;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  #swap-icon {
+    transform: rotate(90deg);
+  }
 }

@@ -1,0 +1,82 @@
+#profile {
+  padding-top: 8rem;
+  display: flex;
+}
+
+.profile-menu {
+  width: 200px;
+  background-color: var(--primaryColor);
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  background-image: url("https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/4af3e5d8-3352-49bd-9570-de2aef8972b9/eric-bailey-profile.jpg");
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 100%;
+  position: relative;
+  margin-top: -100px;
+}
+
+.homeswap-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.homeswap-form form {
+  width: 40%;
+  min-width: 350px;
+  background-color: var(--formColor);
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeswap-form form h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.homeswap-form input {
+  padding: 0.3rem 1rem;
+  margin: 0.5rem;
+  width: 250px;
+}
+
+.container-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.container-column {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+/* select {
+  padding: 0.3rem 1rem;
+  margin: 0.5rem;
+}
+
+select,
+input,
+textarea {
+  min-width: 250px;
+} */
+textarea {
+  margin: 0.5rem;
+}
+
+hr {
+  width: 100%;
+  color: var(--baseColor);
+}
